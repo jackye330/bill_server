@@ -1,0 +1,21 @@
+package com.Servlet;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.xml.ws.http.HTTPException;
+import java.io.IOException;
+
+public class GetPrivateKeyServlet extends HttpServlet {
+    private final String PRIVATE_KEY_STR = "MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCVt/cR+fn4K/pfYlj3FtlR/kDCUigIMqhOfnOCXW/a6qebpRnuQiJzl52qZW0ChtOPJo6zSWOXj6qc9/ND87sWLNdBzfx648FQtLiItZksLFLubM50StjZc5kSZdJJSThoKKFyTzX+Ggc8hsvNuJDEltcLAqQE32EIFewjVvz5R3C2duErNRW3NcMTuRNiS4qb9KcSIc8v0Fp059h2W1voRrX5eTbUuQknPIAaZZj49A0i/Fi1kqkBRux6/SwDuETTHbakBSSXd5qIjZNY92mErokHx79c1c8LYwpySwIu1SiZEKOBraNgB+f/U/61pDU0VOqulV6Z2gWWoQW1Xux9AgMBAAECggEAYYQHOwA0nj4Wv5XRGG8bcVpHV8onJN/J3AZkud6eAlqgfLIWp6cPxXZVTSzuyZyDo1Ob0o7UfV0n5UFigzn2+0SNl+DQuEIsIaL0JqcRc0ITahQYjIpLn6a5ZtBHHVDBmqYMMeYB5tWRLQ0nJYE3WbRdsGAx8LKGArw0p/f6oWmz9eqT6syZ5/ClbVc1BXOHgojP6/NlkWg7J4hfcjnmZA2UA2vWkg2SxnDld/VoUuWg1b7AvCt5YQyn1GW7BvU1Kz+3gkMRVaL99VSWH2lALZ12CZctIlJfCbvwRn4i+Oqd7RgVlaWSzEkl3/lrRZvVEa+muM0AmexfOkTAuUhwSQKBgQDbwZXzyNGRJgR5VjBSErGhkCCFlBD7mLLgnXrI0uwxx7Per7dJ/31EcsmZp6U8FZ+sPBXllpSVDxKx5Q/f+kkMjSWYo6yMOUavDG9R+xdoDDdx+hXZHuchrAEjCTZmD4eDIN/DX5NRu1anbpzOAZA23BEn9cMS65tE87iQs9Z+9wKBgQCuaUttkvCLs1+swW26rIs2Ey3rXk7mupKA6GCOj7HyVCylmcMc1fns3NMSuiA1sBz0B/Kb+yO1I08/UTNifI6PlDp6g/ujxUIokjufDmcdb8uYBlXAtsS/gfscR6lC/xB7JHTwy5dPxeTHp0HyqU/2WOh3sXhvmUv5wCmzl+nvKwKBgHdKxxPnV5vrf1I+r0xeSX7itkTM88sgQTodQqHxnbYIKmQgDudkgaO+jCGVF+Vd96ePlnNjIpUn8YYQSmXTgAQIOvh5IRmdnfk4TtW58CLTPuXoVCPg2qc0sAlM3vLYSz+rgMyV/WrIv2l0ajqKLrcZD1cZ2iNTMp5jjzU96ppRAoGAcL6WSN3s65HnrihYA41YbHtXesg7HwHKhNQy3tVbBbiOJ/rO2wwjhI93TqrM+YfAH6wnk9dzzLtnlhmqquazzXLXnq1E9SglzU5Chl5sH+ZN6RdnRa2gX9/pcO2OKEXz5Ha7tZEWXjYh30Jq6i+zBh+RHxa1MQcayvcCvhrc2YMCgYAD6Rbsy/XnwwUy3i76gb5jM3ILrVyeVIaXB7bCd41EfN/9a0EWmaCGxy332zr3tPb43Ut7nXYBarAKMGyu31A89nZrP/gf/6Qv6lGLDou6/UW1qWyHru8nuqvyoBknQCoMvu/Gje1YyUwDnP03XoNF0T+9uvwbbueleu7bsOKByA==";
+
+    @Override
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws HTTPException, IOException {
+        this.doPost(req, resp);
+    }
+
+    @Override
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws HTTPException, IOException{
+        resp.getOutputStream().write(PRIVATE_KEY_STR.getBytes());
+    }
+}
